@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,6 +13,10 @@ module.exports = {
         foreground: "var(--foreground)",
       },
     },
+    container: {
+      center: true,
+    },
   },
   plugins: [],
 };
+export default config;
