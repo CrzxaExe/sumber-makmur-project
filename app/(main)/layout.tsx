@@ -6,7 +6,9 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="">
       <Sidebar />
       <TopBar />
-      <div className="pt-3 px-6 pl-[4rem] md:pl-[9.9rem]">{children}</div>
+      <div className="pt-3 px-6 pl-[4rem] md:pl-[9.9rem] transition-all duration-300 ease-in-out">
+        {children}
+      </div>
     </div>
   );
 };
