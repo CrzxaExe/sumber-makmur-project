@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useFormState } from "react-dom";
 
 import { registerCredentials } from "@/lib/action";
-import { RegisterButton } from "@/app/components/button";
+import { RegisterButton } from "@/components/button";
+
+import { MdOutlineMail, MdPassword } from "react-icons/md";
+import { FaUser } from "react-icons/fa";
 
 const FormRegister = () => {
   const [state, formAction] = useFormState(registerCredentials, null);
@@ -23,9 +26,9 @@ const FormRegister = () => {
       <div>
         <label
           htmlFor="name"
-          className="block mb-2 text-sm font-medium text-gray-500"
+          className="flex flex-row items-center gap-2 mb-2 text-sm font-medium text-gray-500"
         >
-          Nama
+          <FaUser /> Nama
         </label>
         <input
           type="text"
@@ -42,9 +45,9 @@ const FormRegister = () => {
       <div>
         <label
           htmlFor="email"
-          className="block mb-2 text-sm font-medium text-gray-500"
+          className="flex flex-row items-center gap-2 mb-2 text-sm font-medium text-gray-500"
         >
-          Email
+          <MdOutlineMail /> Email
         </label>
         <input
           type="text"
@@ -61,9 +64,9 @@ const FormRegister = () => {
       <div>
         <label
           htmlFor="password"
-          className="block mb-2 text-sm font-medium text-gray-500"
+          className="flex flex-row items-center gap-2 mb-2 text-sm font-medium text-gray-500"
         >
-          Password
+          <MdPassword /> Kata Sandi
         </label>
         <input
           type="password"
@@ -80,9 +83,9 @@ const FormRegister = () => {
       <div>
         <label
           htmlFor="ConfirmPassword"
-          className="block mb-2 text-sm font-medium text-gray-500"
+          className="flex flex-row items-center gap-2 mb-2 text-sm font-medium text-gray-500"
         >
-          Confirm Password
+          <MdPassword /> Konfirmasi Kata Sandi
         </label>
         <input
           type="password"
@@ -103,7 +106,7 @@ const FormRegister = () => {
         Sudah punya akun?{" "}
         <Link href="/login">
           <span className="text-blue-300 font-medium pl-1 hover:text-blue-500">
-            Login
+            Masuk
           </span>
         </Link>
       </p>

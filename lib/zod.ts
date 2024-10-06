@@ -14,7 +14,7 @@ export const RegisterSchema = object({
   path: ["ConfirmPassword"],
 });
 
-export const SignInSchema = object({
+export const LoginSchema = object({
   email: string().email("Email tidak valid"),
   password: string()
     .min(6, "Password minimal 6 karakter")

@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 import Credentials from "next-auth/providers/credentials";
-import { SignInSchema } from "./lib/zod";
+import { LoginSchema } from "./lib/zod";
 import { compareSync } from "bcrypt-ts";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -18,7 +18,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         password: {},
       },
       authorize: async (credentials) => {
-        const validated = SignInSchema.safeParse(credentials);
+        const validated = LoginSchema.safeParse(credentials);
 
         if (!validated.success) {
           return null;
@@ -41,4 +41,27 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    authorized({ auth, request: { nextUrl } }) {
+      const isLogin = !!auth?.user;
+      const ProtectedRoutes = ["/timeline"];
+
+      if (!isLogin && ProtectedRoutes.includes(nextUrl.pathname)) {
+        return Response.redirect(new URL("/login", nextUrl));
+      }
+
+      if (isLogin && ["/login", "/register"].includes(nextUrl.pathname)) {
+        return Response.redirect(new URL("/timeline", nextUrl));
+      }
+      return true;
+    },
+    jwt({ token /*, user*/ }) {
+      return token;
+    },
+    session({ session, token }) {
+      session.user.id = token.sub;
+
+      return session;
+    },
+  },
 });
