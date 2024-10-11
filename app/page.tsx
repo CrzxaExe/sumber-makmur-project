@@ -1,17 +1,20 @@
 import Link from "next/link";
 import { metadata } from "./layout";
+import TopBar from "@/components/topBar";
 
 export default function Home() {
   metadata.title = "Treffen";
 
   return (
     <div className="">
-      <section className="h-screen w-full bg-gradient-to-b from-[#1b1919] to-[#2b2828] py-4 px-6 flex flex-col justify-center items-center">
+      <TopBar isLogin={false} />
+
+      <section className="h-screen w-full bg-gradient-to-b from-primary-900 to-primary-800 py-4 px-6 flex flex-col justify-center items-center">
         <h1 className="font-valorant font-bold text-4xl md:text-5xl lg:text-7xl -mt-8 block text-center">
           Treffen
         </h1>
 
-        <p className="text-sm lg:text-base text-[#9e9999] block mt-3 w-2/3 text-center">
+        <p className="text-sm lg:text-base text-accent-100 block mt-3 w-2/3 text-center">
           Voluptate amet tempor eu nostrud ex nostrud anim. Cillum sunt minim
           commodo pariatur ut excepteur velit duis cillum amet magna aliquip.
         </p>

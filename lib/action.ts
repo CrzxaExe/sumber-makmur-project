@@ -30,6 +30,7 @@ export const registerCredentials = async (
       data: {
         name,
         email,
+        status: "No status",
         password: hashPassword,
       },
     });

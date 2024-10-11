@@ -1,5 +1,6 @@
 import { metadata } from "@/app/layout";
 import { auth } from "@/auth";
+import { Forum } from "@/components/comp";
 import React from "react";
 
 const Timeline = async () => {
@@ -13,6 +14,8 @@ const Timeline = async () => {
         Hallo,{" "}
         <span className="text-gray-500 font-bold">{session?.user?.name}</span>
       </h1>
+
+      <Forum />
     </div>
   );
 };

@@ -34,6 +34,7 @@ CREATE TABLE "users" (
     "email_verified" TIMESTAMP(3),
     "password" TEXT,
     "image" TEXT,
+    "status" TEXT,
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
 );

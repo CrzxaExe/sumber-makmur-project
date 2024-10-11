@@ -29,6 +29,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           where: { email },
         });
 
+        console.log(user);
+
         if (!user || !user.password) {
           throw new Error("Tidak menemukan user");
         }
@@ -44,7 +46,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLogin = !!auth?.user;
-      const ProtectedRoutes = ["/timeline"];
+      const ProtectedRoutes = ["/timeline", "/settings", "/post"];
 
       if (!isLogin && ProtectedRoutes.includes(nextUrl.pathname)) {
         return Response.redirect(new URL("/login", nextUrl));

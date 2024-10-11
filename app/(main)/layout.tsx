@@ -5,7 +5,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="">
       <Sidebar />
-      <TopBar />
+      <TopBar isLogin={true} />
       <div className="pt-3 px-6 pl-[4rem] md:pl-[9.9rem] transition-all duration-300 ease-in-out">
         {children}
       </div>
