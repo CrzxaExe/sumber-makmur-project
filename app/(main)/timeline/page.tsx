@@ -9,8 +9,8 @@ const Timeline = async () => {
   const session = await auth();
 
   return (
-    <div>
-      <h1 className="text-lg">
+    <div className="mt-2">
+      <h1 className="text-lg mb-3">
         Hallo,{" "}
         <span className="text-gray-500 font-bold">{session?.user?.name}</span>
       </h1>

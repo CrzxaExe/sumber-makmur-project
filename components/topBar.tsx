@@ -28,7 +28,7 @@ const TopBar = ({ isLogin }: { isLogin?: boolean }) => {
             />
           </div>
           <ul className="px-3 flex flex-row items-center gap-2 lg:gap-1 transition-all duration-300 ease-in-out">
-            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 rounded-xl lg:rounded-sm transition-all duration-300 ease-in-out">
+            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 rounded-xl lg:rounded-xl transition-all duration-300 ease-in-out">
               <Link
                 href="post"
                 className="flex flex-row justify-center items-center"
@@ -37,7 +37,7 @@ const TopBar = ({ isLogin }: { isLogin?: boolean }) => {
                 <span className="hidden lg:block"></span>
               </Link>
             </li>
-            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-sm transition-all duration-300 ease-in-out">
+            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-xl transition-all duration-300 ease-in-out">
               <Link
                 href="timeline"
                 className="flex flex-row justify-center items-center"
@@ -46,7 +46,7 @@ const TopBar = ({ isLogin }: { isLogin?: boolean }) => {
                 <span className="hidden lg:block">Beranda</span>
               </Link>
             </li>
-            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-sm transition-all duration-300 ease-in-out">
+            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-xl transition-all duration-300 ease-in-out">
               <Link
                 href="settings"
                 className="flex flex-row justify-center items-center"
@@ -55,7 +55,7 @@ const TopBar = ({ isLogin }: { isLogin?: boolean }) => {
                 <span className="hidden lg:block">Pengaturan</span>
               </Link>
             </li>
-            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-sm transition-all duration-300 ease-in-out">
+            <li className="bg-[#313030] hover:bg-[#4b4a4a] lg:bg-[#313030]/[0] px-3 py-2.5 lg:py-2 rounded-xl lg:rounded-xl transition-all duration-300 ease-in-out">
               <form
                 action={async () => {
                   "use server";
